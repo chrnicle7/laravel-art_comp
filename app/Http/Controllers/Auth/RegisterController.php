@@ -52,7 +52,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'confirmed'],
         ]);
     }
 
@@ -72,7 +72,7 @@ class RegisterController extends Controller
             'count_gold_medal' => 0,
             'count_silver_medal' => 0,
             'count_bronze_medal' => 0,
-            'count_challenges_joined' => 0, 
+            'count_challenges_joined' => 0,
             'count_challenges_hosted' => 0,
         ]);
     }
