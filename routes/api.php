@@ -18,4 +18,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login', 'ApiLoginController@login');
+// Auth
+Route::post('login', 'UserApiController@login');
+Route::post('register', 'UserApiController@registerStore');
+
+// Get User
+Route::get('user/{idUser}', 'UserApiController@getUser');
+
+// Create Challenge
+Route::get('challenges', 'ChallengeApiController@getChallenges');
+Route::post('challenge/store', 'ChallengeApiController@storeChallenge');
+
+// Create Submission
+Route::post('submission/store', 'ChallengeApiController@storeSubmission');
+
